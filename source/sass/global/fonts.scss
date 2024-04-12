@@ -1,8 +1,48 @@
+
 @font-face {
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  font-family: "";
-
+  src: url("../../fonts/montserrat.woff") format("woff"), url("../../fonts/montserrat.woff2") format("woff2");
   font-display: swap;
-  src: url("../fonts/.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../../fonts/montserrat-medium.woff") format("woff"), url("../../fonts/montserrat-medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../../fonts/myriad-pro.woff") format("woff"), url("../../fonts/myriad-pro.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Myriad Pro";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../fonts/myriad-pro-bold.woff") format("woff"), url("../../fonts/myriad-pro-bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+// @font-face {
+//   font-family: "Montserrat";
+//   font-style: normal;
+//   font-weight: 700;
+//   src: url("../../fonts/montserrat-bold.woff") format("woff"), url("../../fonts/montserrat-bold.woff2") format("woff2");
+//   font-display: swap;
+// }
+
+// @font-face {
+//   font-family: "Montserrat";
+//   font-style: normal;
+//   font-weight: 800;
+//   src: url("../../fonts/montserrat-extra-bold.woff") format("woff"), url("../../fonts/montserrat-extra-bold.woff2") format("woff2");
+//   font-display: swap;
+// }
