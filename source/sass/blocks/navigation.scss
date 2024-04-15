@@ -1,23 +1,39 @@
-.navigation__list li a {
+.navigation__wrapper {
+  width: 100%;
+
+  @include vp-768 {
+    width: 232px;
+  }
+
+  @include vp-1440 {
+    width: 396px;
+  }
+}
+
+.navigation__list a {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 0;
-
-  div {
-    font-family: $ff-extra;
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 24px;
-  }
+  font-family: $ff-extra;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
+.active-link {
+  ul {
+    a {
+      font-size: 16px;
+      padding: 8px 0;
+    }
+  }
+}
 
 .navigation__wrapper {
   background-color: $bg-grey;
   transition: all 1s;
   border-radius: 10px;
-  // padding: 16px;
 
   button {
     padding: 0;
@@ -51,6 +67,7 @@
     &.active {
       border-bottom: 1px solid $light-grey;
       transition: all 0.3s ease-in-out;
+
       svg {
         transform: rotate(630deg);
         transition: all 0.5s ease-in-out;
@@ -77,9 +94,11 @@
   li {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+
     a {
       border-bottom: 1px solid $light-grey;
     }
+
     @include vp-768 {
       opacity: 1 !important;
     }
@@ -87,7 +106,6 @@
     &:hover,
     &:focus,
     &:active {
-
 
       svg {
         stroke: $red;
@@ -104,9 +122,49 @@
         color: $red;
         border-bottom: 1px solid $red;
       }
+
       svg {
         stroke: $red;
       }
+
+      ul {
+        display: block;
+        margin-left: 20px;
+
+        li {
+
+          &:hover,
+          &:focus,
+          &:active {
+            svg {
+              stroke: $red;
+            }
+
+            a {
+              color: $red;
+            }
+          }
+
+          a {
+            color: $black;
+            border-bottom: none;
+          }
+
+          svg {
+            stroke: $grey;
+          }
+        }
+
+        li.active-link-extra a {
+          color: $red;
+
+          svg {
+            stroke: $red !important;
+          }
+        }
+      }
+
+
     }
 
 
@@ -117,8 +175,69 @@
     padding: 10px 16px;
 
     li {
-      opacity: 1;
+      opacity: 1 !important;
     }
   }
 }
 
+.main-wrapper {
+  word-wrap: break-word;
+
+
+  @include vp-768 {
+    display: flex;
+    position: relative;
+    // height: 100%;
+  }
+}
+
+.navigation {
+  // @include vp-768 {
+  // position: fixed;
+  // top: 0px;
+  // left: 0;
+  position: relative;
+  z-index: 10;
+  // width: 100%;
+  // }
+  background-color: white;
+}
+
+.navigation.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .container {
+    box-shadow: 0px 4px 38px 0px #4F596466;
+  }
+}
+
+.navigation .container {
+
+padding-bottom: 10px;
+padding-top: 10px;
+
+
+@include vp-768 {
+  box-shadow: none;
+  padding-bottom: 0;
+  padding-top: 0;
+  position: relative;
+}
+}
+
+.sidebar__wrapper {
+  position: relative;
+  @include vp-768 {
+    position: sticky;
+    top: 20px;
+    left: 0;
+  }
+}
+
+// .navigation__list.active {
+//   position: absolute;
+//   top: 40px;
+//   background-color: white;
+// }
