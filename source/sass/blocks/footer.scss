@@ -1,0 +1,119 @@
+.footer {
+  background-color: $bg-dark-grey;
+  color: $grey;
+
+  a {
+    color: $color-default-white;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 60%;
+    }
+  }
+
+  .container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include vp-768 {
+      display: grid;
+      justify-content: space-between;
+      align-items: flex-start;
+      grid-template-areas:
+        "img contacts"
+        "navigation navigation"
+        "copyright copyright";
+    }
+
+    @include vp-1440 {
+      align-items: center;
+      grid-template-areas:
+        "img navigation"
+        "contacts contacts"
+        "copyright copyright";
+    }
+  }
+
+  .footer__list {
+    grid-area: navigation;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 21.6px;
+      text-align: left;
+    }
+
+    @include vp-768 {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    @include vp-1440 {
+      flex-direction: row;
+      justify-content: center;
+      // align-items: center;
+    }
+  }
+
+  .footer__contacts {
+    grid-area: contacts;
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+
+    a {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 18.9px;
+      text-align: left;
+      position: relative;
+    }
+
+    li:not(:last-of-type)a::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -10px;
+      height: 100%;
+      width: 1px;
+      background-color: #ffffff;
+    }
+  }
+
+  .footer__img {
+    grid-area: img;
+    margin-bottom: 20px;
+
+    @include vp-1440 {
+      margin-bottom: 0px;
+    }
+  }
+
+  .footer__copyright {
+    grid-area: copyright;
+    text-align: center;
+    padding: 20px 20px 0;
+    border-top: 1px solid $grey;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.2px;
+    text-align: center;
+
+    @include vp-1440 {
+      br {
+        display: none;
+      }
+    }
+  }
+}

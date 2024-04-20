@@ -30,41 +30,42 @@
     <header>
       <div class="container container--header">
         <div class="main-header">
-        <div class="main-header__wrapper">
-          <div class="main-header__logo">
-            <a href="index.html">
-              <picture>
-                <source type="image/svg+xml" media="(min-width: 768px)" width="330" height="82" srcset="img/svg/logo.svg">
-                <img src="img/svg/logo-mobile.svg" width="48" height="64" alt="Логотип МедЭкоТест.">
-              </picture>
-            </a>
+          <div class="main-header__wrapper">
+            <div class="main-header__logo">
+              <a href="index.html">
+                <picture>
+                  <source type="image/svg+xml" media="(min-width: 768px)" width="330" height="82"
+                    srcset="img/svg/logo.svg">
+                  <img src="img/svg/logo-mobile.svg" width="48" height="64" alt="Логотип МедЭкоТест.">
+                </picture>
+              </a>
+            </div>
+            <div class="main-header__contacts">
+              <a href="mailto:info@medecotest.ru">info@medecotest.ru</a>
+              <a href="tel:+74956461056">8 495 646 10 56</a>
+            </div>
           </div>
-          <div class="main-header__contacts">
-            <a href="mailto:info@medecotest.ru">info@medecotest.ru</a>
-            <a href="tel:+74956461056">8 495 646 10 56</a>
-          </div>
+          <h1>Малая инновационная компания МГУ им. М.В. Ломоносова</h1>
+          <ul class="main-header__list">
+            <li>
+              <a href="product.html">Тест-системы</a>
+            </li>
+            <li>
+              <a href="product.html">Тест-наборы</a>
+            </li>
+            <li>
+              <a href="product.html">Минилаборатории</a>
+            </li>
+          </ul>
         </div>
-        <h1>Малая инновационная компания МГУ им. М.В. Ломоносова</h1>
-        <ul class="main-header__list">
-          <li>
-            <a href="product.html">Тест-системы</a>
-          </li>
-          <li>
-            <a href="product.html">Тест-наборы</a>
-          </li>
-          <li>
-            <a href="product.html">Минилаборатории</a>
-          </li>
-        </ul>
-      </div>
       </div>
     </header>
     <main>
-      <div class="main-wrapper">
-        <div class="sidebar">
-          <div class="sidebar__wrapper">
-            <section class="navigation">
-              <div class="container">
+      <div class="main-wrapper-sidebar">
+        <div class="container">
+          <div class="sidebar">
+            <div class="sidebar__wrapper">
+              <section class="navigation">
                 <h2 class="visually-hidden">Навигация</h2>
                 <div class="navigation__wrapper">
                   <button>
@@ -93,17 +94,11 @@
                         <li>
                           <a href="about.html">
                             <div>Подробная информация</div>
-                            <svg class="arrow" width="6" height="12" viewBox="0 0 6 12" role="img">
-                              <use href="img/sprite.svg#arrow"></use>
-                            </svg>
                           </a>
                         </li>
                         <li class="active-link-extra">
                           <a href="news.html">
                             <div>Новости</div>
-                            <svg class="arrow" width="6" height="12" viewBox="0 0 6 12" role="img">
-                              <use href="img/sprite.svg#arrow"></use>
-                            </svg>
                           </a>
                         </li>
                       </ul>
@@ -176,63 +171,102 @@
                     </li>
                   </ul>
                 </div>
-              </div>
-            </section>
-            <div class="navigation-placeholder"></div>
-            <section class="news">
-              <div class="container">
+              </section>
+              <div class="navigation-placeholder"></div>
+              <section class="news">
                 <div class="main-wrapper">
-                <h1 class="small-title">Новости</h1>
-                <a href="news.html">
-                  <div>Все новости</div>
-                        <svg class="arrow" width="6" height="12" viewBox="0 0 6 12" role="img">
-                          <use href="img/sprite.svg#arrow"></use>
-                        </svg>
-                </a>
-              </div>
+                  <h1 class="small-title">Новости</h1>
+                  <a href="news.html">
+                    <div>Все новости</div>
+                    <svg class="arrow" width="6" height="12" viewBox="0 0 6 12" role="img">
+                      <use href="img/sprite.svg#arrow"></use>
+                    </svg>
+                  </a>
+                </div>
                 <div class="swiper-container">
                   <ul class="swiper-wrapper">
                     <li class="swiper-slide">
                       <a href="piece-of-news.html">
-                      <div class="title">
-                        <h2>Изменение цен</h2>
-                        <div class="date">20.02.23</div>
-                      </div>
-                      <p>Обратите внимание - на сайте опубликован новый прайс-лист </p>
-                    </a>
+                        <div class="title">
+                          <h2>Изменение цен</h2>
+                          <div class="date">20.02.23</div>
+                        </div>
+                        <p>Обратите внимание - на сайте опубликован новый прайс-лист </p>
+                      </a>
                     </li>
                     <li class="swiper-slide">
                       <a href="piece-of-news.html">
-                      <div class="title">
-                        <h2>Изменение цен</h2>
-                        <div class="date">18.10.22</div>
-                      </div>
-                      <p>На сайте опубликован прайс-лист</p>
-                    </a>
+                        <div class="title">
+                          <h2>Изменение цен</h2>
+                          <div class="date">18.10.22</div>
+                        </div>
+                        <p>На сайте опубликован прайс-лист</p>
+                      </a>
                     </li>
                     <li class="swiper-slide">
                       <a href="piece-of-news.html">
-                      <div class="title">
-                        <h2>Новый прайс-лист</h2>
-                        <div class="date">18.10.22</div>
-                      </div>
-                      <p>С 7 февраля 2022 года действует новый прайс-лист</p>
-                    </a>
+                        <div class="title">
+                          <h2>Новый прайс-лист</h2>
+                          <div class="date">18.10.22</div>
+                        </div>
+                        <p>С 7 февраля 2022 года действует новый прайс-лист</p>
+                      </a>
                     </li>
                     <li class="swiper-slide">
                       <a href="piece-of-news.html">
-                      <div class="title">
-                        <h2>Aquatherm Moscow 2022</h2>
-                        <div class="date">24.01.22</div>
-                      </div>
-                      <p>С 15 по 18 февраля 2022 г. наша компания будет представлена на Aquatherm Moscow 2022</p>
-                    </a>
+                        <div class="title">
+                          <h2>Aquatherm Moscow 2022</h2>
+                          <div class="date">24.01.22</div>
+                        </div>
+                        <p>С 15 по 18 февраля 2022 г. наша компания будет представлена на Aquatherm Moscow 2022</p>
+                      </a>
                     </li>
                   </ul>
                   <div class="swiper-pagination"></div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </div>
+          </div>
+          <div class="news-container">
+            <h2 class="main-title">Новости</h2>
+            <ul class="news-list">
+              <li class="news-card">
+                <a href="piece-of-news.html">
+                  <div class="title">
+                    <h2>Изменение цен</h2>
+                    <div class="date">20.02.23</div>
+                  </div>
+                  <p>Обратите внимание - на сайте опубликован новый прайс-лист </p>
+                </a>
+              </li>
+              <li class="news-card">
+                <a href="piece-of-news.html">
+                  <div class="title">
+                    <h2>Изменение цен</h2>
+                    <div class="date">18.10.22</div>
+                  </div>
+                  <p>На сайте опубликован прайс-лист</p>
+                </a>
+              </li>
+              <li class="news-card">
+                <a href="piece-of-news.html">
+                  <div class="title">
+                    <h2>Новый прайс-лист</h2>
+                    <div class="date">18.10.22</div>
+                  </div>
+                  <p>С 7 февраля 2022 года действует новый прайс-лист</p>
+                </a>
+              </li>
+              <li class="news-card">
+                <a href="piece-of-news.html">
+                  <div class="title">
+                    <h2>Aquatherm Moscow 2022</h2>
+                    <div class="date">24.01.22</div>
+                  </div>
+                  <p>С 15 по 18 февраля 2022 г. наша компания будет представлена на Aquatherm Moscow 2022</p>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -240,13 +274,58 @@
     <footer>
       <div class="footer">
         <div class="container">
+          <div class="footer__img">
+            <picture>
+              <source type="image/svg+xml" media="(min-width: 768px)" width="194" height="48"
+                srcset="img/svg/light-logo.svg">
+              <img src="img/svg/light-logo.svg" width="280" height="69" alt="Светлый логотип МедЭкоТест.">
+            </picture>
+          </div>
           <ul class="footer__list">
             <li>
-              <a href="#">
-
+              <a href="index.html">
+                Главная
+              </a>
+            </li>
+            <li>
+              <a href="about.html">
+                О компании
+              </a>
+            </li>
+            <li>
+              <a href="products.html">
+                Продукция
+              </a>
+            </li>
+            <li>
+              <a href="services.html">
+                Услуги
+              </a>
+            </li>
+            <li>
+              <a href="contacts.html">
+                Контакты
+              </a>
+            </li>
+            <li>
+              <a href="news.html">
+                Новости
               </a>
             </li>
           </ul>
+          <ul class="footer__contacts">
+            <li>
+              <a href="mailto:info@medecotest.ru">info@medecotest.ru</a>
+            </li>
+            <li>
+              <a href="tel:+74956461056">8 495 646 10 56</a>
+            </li>
+          </ul>
+          <p class="footer__copyright">
+            Copyright МедЭкоТест 2008-2024.<br>
+            При использовании материалов с сайта ссылка на сайт обязательна!
+          </p>
+        </div>
       </div>
     </footer>
   </div>
@@ -254,14 +333,14 @@
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     var swiper = new Swiper('.swiper-container', {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        // spaceBetween: 120,
       },
+      spaceBetween: 20,
       breakpoints: {
         768: {
           slidesPerView: 1,

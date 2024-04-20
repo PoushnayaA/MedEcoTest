@@ -43,12 +43,12 @@
   border-radius: 10px;
   padding: 16px;
 
-  &__logo img {
-    width: 48px;
+  &__logo, &__logo a, &__logo a img {
+    width: 48px !important;
     height: 64px;
 
     @include vp-768 {
-      width: 330px;
+      width: 330px !important;
       height: 82px;
     }
 

@@ -61,11 +61,11 @@
       </div>
     </header>
     <main>
-      <div class="main-wrapper">
-        <div class="sidebar">
-          <div class="sidebar__wrapper">
-            <section class="navigation">
-              <div class="container">
+      <div class="main-wrapper-sidebar">
+        <div class="container">
+          <div class="sidebar">
+            <div class="sidebar__wrapper">
+              <section class="navigation">
                 <h2 class="visually-hidden">Навигация</h2>
                 <div class="navigation__wrapper">
                   <button>
@@ -94,17 +94,11 @@
                         <li>
                           <a href="about.html">
                             <div>Подробная информация</div>
-                            <svg class="arrow" width="6" height="12" viewBox="0 0 6 12" role="img">
-                              <use href="img/sprite.svg#arrow"></use>
-                            </svg>
                           </a>
                         </li>
                         <li>
                           <a href="news.html">
                             <div>Новости</div>
-                            <svg class="arrow" width="6" height="12" viewBox="0 0 6 12" role="img">
-                              <use href="img/sprite.svg#arrow"></use>
-                            </svg>
                           </a>
                         </li>
                       </ul>
@@ -177,11 +171,9 @@
                     </li>
                   </ul>
                 </div>
-              </div>
-            </section>
-            <div class="navigation-placeholder"></div>
-            <section class="news">
-              <div class="container">
+              </section>
+              <div class="navigation-placeholder"></div>
+              <section class="news">
                 <div class="main-wrapper">
                   <h1 class="small-title">Новости</h1>
                   <a href="news.html">
@@ -232,8 +224,8 @@
                   </ul>
                   <div class="swiper-pagination"></div>
                 </div>
-              </div>
-            </section>
+              </section>
+            </div>
           </div>
         </div>
       </div>
@@ -241,28 +233,73 @@
     <footer>
       <div class="footer">
         <div class="container">
+          <div class="footer__img">
+            <picture>
+              <source type="image/svg+xml" media="(min-width: 768px)" width="194" height="48"
+                srcset="img/svg/light-logo.svg">
+              <img src="img/svg/light-logo.svg" width="280" height="69" alt="Светлый логотип МедЭкоТест.">
+            </picture>
+          </div>
           <ul class="footer__list">
             <li>
-              <a href="#">
-
+              <a href="index.html">
+                Главная
+              </a>
+            </li>
+            <li>
+              <a href="about.html">
+                О компании
+              </a>
+            </li>
+            <li>
+              <a href="products.html">
+                Продукция
+              </a>
+            </li>
+            <li>
+              <a href="services.html">
+                Услуги
+              </a>
+            </li>
+            <li>
+              <a href="contacts.html">
+                Контакты
+              </a>
+            </li>
+            <li>
+              <a href="news.html">
+                Новости
               </a>
             </li>
           </ul>
+          <ul class="footer__contacts">
+            <li>
+              <a href="mailto:info@medecotest.ru">info@medecotest.ru</a>
+            </li>
+            <li>
+              <a href="tel:+74956461056">8 495 646 10 56</a>
+            </li>
+          </ul>
+          <p class="footer__copyright">
+            Copyright МедЭкоТест 2008-2024.<br>
+            При использовании материалов с сайта ссылка на сайт обязательна!
+          </p>
         </div>
+      </div>
     </footer>
   </div>
 
   <script src="js/vendor.min.js"></script>
   <script src="js/main.min.js"></script>
 
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     var swiper = new Swiper('.swiper-container', {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        // spaceBetween: 120,
       },
+      spaceBetween: 20,
       breakpoints: {
         768: {
           slidesPerView: 1,
