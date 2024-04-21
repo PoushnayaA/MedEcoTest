@@ -58,7 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
   function handleScroll() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth < 768) {
       if (scrollTop >= navigationTop) {
         navigation.classList.add('fixed');
         navigation.style.width = initialPosition.width + 'px';
@@ -133,37 +133,21 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   const wrapperTextElements = document.querySelectorAll('.wrapper-text-content');
+  const contantContainres = document.querySelectorAll('.content-container');
 
-  if (wrapperTextElements.length > 0) {
-    for (let i = 0; i < wrapperTextElements.length - 1; i++) {
-      wrapperTextElements[i].classList.add('wrapper-text-border');
 
+  if (contantContainres.length > 1) {
+    for (let i = 0; i < contantContainres.length - 1; i++) {
+      contantContainres[i].classList.add('content-container-border');
     }
-  }
+  } else {
+    if (wrapperTextElements.length > 0) {
+      for (let i = 0; i < wrapperTextElements.length - 1; i++) {
+        wrapperTextElements[i].classList.add('wrapper-text-border');
 
-
-
-
-  // document.addEventListener('DOMContentLoaded', function() {
-    const tableContainer = document.querySelector('.table-container');
-    const table = tableContainer.querySelector('table');
-
-    function adjustTableWidth() {
-      const containerWidth = tableContainer.offsetWidth;
-      const tableWidth = table.offsetWidth;
-
-      if (tableWidth > containerWidth) {
-        tableContainer.style.overflowX = 'auto';
-      } else {
-        tableContainer.style.overflowX = 'hidden';
       }
     }
-
-    // Вызываем функцию при загрузке страницы и при изменении размера окна
-    window.addEventListener('load', adjustTableWidth);
-    window.addEventListener('resize', adjustTableWidth);
-  // });
-
+  }
 
 
 });

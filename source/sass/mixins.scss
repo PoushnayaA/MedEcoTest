@@ -10,6 +10,12 @@
   }
 }
 
+@mixin vp-900 {
+  @media (min-width: $vp-790) {
+    @content;
+  }
+}
+
 @mixin vp-1024 {
   @media (min-width: $vp-1024) {
     @content;
