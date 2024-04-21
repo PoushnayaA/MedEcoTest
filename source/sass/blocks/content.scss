@@ -1,0 +1,157 @@
+.content-container {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.wrapper-text-content {
+  padding: 0 0 20px;
+
+  ul {
+    padding-left: 40px;
+
+    li {
+      list-style-type: disc;
+    }
+  }
+
+  h3 {
+    font-family: $ff-extra;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21.6px;
+    text-align: left;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 216px;
+
+    @include vp-768 {
+      height: 354px;
+    }
+
+    @include vp-1440 {
+      height: 437px;
+    }
+  }
+
+  // .table {
+  //   table {
+  //     border-collapse: collapse;
+  //     // width: 100%;
+  //   }
+
+    th,
+    td {
+  //     // background-color: red;
+  //     padding: 8px;
+  //     text-align: left;
+  //     vertical-align: center;
+  //     border: 1px solid #ccc;
+  //     font-size: 16px;
+  //     font-weight: 400;
+  //     line-height: 21.6px;
+      white-space: break-spaces;
+  //     // max-width: 350px;
+
+    }
+  // }
+}
+
+.wrapper-quote {
+  p {
+    font-family: $ff-extra;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.8px;
+    text-align: left;
+
+    padding: 20px 0;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 79px;
+      height: 6px;
+      background-color: $red;
+    }
+  }
+}
+
+.wrapper-text-border {
+  border-bottom: 1px solid $light-grey;
+}
+
+.wrapper-link {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px;
+
+  a {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18.9px;
+    text-align: center;
+    color: $red;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 60%;
+    }
+  }
+
+  svg {
+    stroke: white;
+  }
+}
+
+.wrapper-dark-list {
+  ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  ul li {
+    list-style-type: none;
+    padding: 0 10px;
+    background-color: $bg-grey;
+    border-radius: 5px;
+  }
+}
+
+
+
+
+
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  white-space: nowrap;
+}
