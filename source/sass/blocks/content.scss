@@ -15,6 +15,22 @@
     text-align: left;
   }
 
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+
+    a {
+      color: $red;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 21.6px;
+    }
+  }
+
   ul {
     padding-left: 40px;
 
@@ -29,6 +45,11 @@
     font-weight: 400;
     line-height: 24px;
     text-align: left;
+
+    @include vp-1440 {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
   }
 
   h4 {
@@ -224,7 +245,7 @@
     border-radius: 5px;
   }
 
-  li h2 {
+  li h3 {
     //styleName: h3;
     font-family: $ff-extra;
     font-size: 24px;
@@ -247,4 +268,207 @@
   -webkit-overflow-scrolling: touch;
   word-wrap: break-word;
   overflow: hidden;
+}
+
+.wrapper-products {
+  li {
+    display: flex;
+
+    h3 {
+      font-family: $ff-extra;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      text-align: left;
+
+      @include vp-1440 {
+        font-size: 24px;
+        line-height: 28.8px;
+      }
+    }
+
+    svg {
+      stroke: $red;
+    }
+
+    a {
+      border: 1px solid $light-grey;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-color: $red;
+      }
+
+      @include vp-1440 {
+        display: flex;
+        gap: 10px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+
+      @include vp-768 {
+        height: 145px;
+      }
+
+      @include vp-1440 {
+        height: 90px;
+        width: 120px;
+      }
+    }
+
+    div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    @include vp-768 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include vp-1440 {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.wrapper-dark-card {
+  background-color: $bg-grey;
+  border-radius: 5px;
+  padding: 16px;
+
+  h3 {
+    margin: 0;
+    font-family: $ff-extra;
+    color: $blue;
+    padding: 10px 0;
+    border-bottom: 1px solid $light-grey;
+
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include vp-1440 {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.6px;
+  }
+
+  img {
+    width: 100%;
+    height: 191px;
+
+    @include vp-768 {
+      width: 156px;
+      height: 100px;
+    }
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+
+    @include vp-768 {
+      flex-direction: row-reverse;
+    }
+  }
+
+  a {
+    color: $red;
+
+    svg {
+      stroke: $red;
+    }
+  }
+}
+
+.wrapper-dark-inf {
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  ul li {
+    list-style-type: disc;
+  }
+
+  ul {
+    padding-left: 40px;
+  }
+
+  h3 {
+    color: $black;
+  }
+}
+
+.wrapper-map {
+  iframe {
+    width: 100%;
+    height: 216px;
+
+    @include vp-768 {
+      height: 354px;
+    }
+
+    @include vp-1440 {
+      height: 436px;
+    }
+  }
+}
+
+.wrapper-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: left;
+    margin: 0;
+  }
+
+  a {
+    font-family: $ff-extra;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $red;
+    }
+
+    @include vp-1440 {
+      font-size: 24px;
+      line-height: 28.8px;
+    }
+  }
 }
