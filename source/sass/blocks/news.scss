@@ -1,5 +1,5 @@
 .news {
-  margin: 20px 0;
+  margin: 17px 0 10px;
   transition: all 1s;
 
   @include vp-768 {
@@ -17,7 +17,7 @@
   .main-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 10px 0 10px;
 
     a {
       color: $red;

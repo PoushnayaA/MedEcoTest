@@ -87,6 +87,7 @@
   line-height: 28.8px;
   text-align: left;
   color: $red;
+  margin: 5px 0;
 
   @include vp-1440 {
     font-size: 36px;
@@ -100,14 +101,35 @@
 
 .main-title-decorate {
   position: relative;
+  padding-top: 20px;
 
   &::after {
     content: "";
     position: absolute;
-    top: -20px;
+    top: 0;
     left: 0;
     width: 79px;
     height: 6px;
     background-color: $red;
+  }
+
+  br {
+    display: none;
+  }
+
+  @include vp-768 {
+    padding-top: 12px;
+
+    br {
+      display: block;
+    }
+  }
+
+  @include vp-1440 {
+    margin-top: 70px;
+    margin-bottom: 40px;
+    br {
+      display: none;
+    }
   }
 }

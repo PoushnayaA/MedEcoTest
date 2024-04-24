@@ -42,8 +42,21 @@
   background-color: $bg-grey;
   border-radius: 10px;
   padding: 16px;
+  padding-bottom: 5px;
 
-  &__logo, &__logo a, &__logo a img {
+  @include vp-768 {
+    padding: 24px;
+    margin-bottom: 40px;
+  }
+
+  @include vp-1440 {
+    padding: 62px;
+    margin-bottom: 63px;
+  }
+
+  &__logo,
+  &__logo a,
+  &__logo a img {
     width: 48px !important;
     height: 64px;
 
@@ -58,12 +71,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include vp-768 {
+      align-items: unset;
+    }
   }
 
   &__contacts {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    align-items: flex-end;
+    gap: 9px;
+    padding: 10px 0;
+
 
 
     a {
@@ -71,7 +91,6 @@
       font-weight: 400;
       line-height: 21.6px;
       text-align: left;
-
     }
   }
 
@@ -84,14 +103,14 @@
     @include vp-768 {
       font-size: 36px;
       line-height: 43.2px;
+      margin-top: 50px;
     }
 
     @include vp-1440 {
       font-size: 40px;
       line-height: 54px;
+      max-width: 60%;
     }
-
-
   }
 
   &__list {
@@ -105,6 +124,14 @@
       border: 1.5px solid $red;
       display: block;
       padding: 16px;
+
+      @include vp-768 {
+        padding: 10px 20px;
+      }
+
+      @include vp-1440 {
+        padding: 10px 22px;
+      }
     }
 
     @include vp-768 {

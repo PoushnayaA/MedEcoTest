@@ -1,10 +1,26 @@
 .content-container {
   width: 100%;
+
   margin-bottom: 40px;
+
+  &:not(:first-of-type) {
+    margin-top: 40px;
+  }
+
+  &:last-of-type {
+    @include vp-1440 {
+      margin-bottom: 62px;
+    }
+  }
+
 }
 
 .wrapper-text-content {
-  padding: 0 0 20px;
+  padding: 0 0 30px;
+
+  @include vp-1440 {
+    padding-bottom: 40px;
+  }
 
   .red-title {
     color: $red;
@@ -20,6 +36,10 @@
     font-weight: 400;
     line-height: 21.6px;
     text-align: left;
+
+    @include vp-1440 {
+      margin: 25px 0;
+    }
 
     a {
       color: $red;
@@ -45,6 +65,7 @@
     font-weight: 400;
     line-height: 24px;
     text-align: left;
+    margin: 15px 0;
 
     @include vp-1440 {
       font-size: 24px;
@@ -149,21 +170,29 @@
 }
 
 .wrapper-quote {
+  margin-top: 40px;
   p {
     font-family: $ff-extra;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 28.8px;
+    line-height: 24px;
     text-align: left;
 
     padding: 20px 0;
 
     position: relative;
 
+    @include vp-1440 {
+      font-size: 24px;
+    line-height: 28.8px;
+    margin-top: 60px;
+    margin-bottom: 40px;
+    }
+
     &::after {
       content: "";
       position: absolute;
-      top: 0;
+      top: -6px;
       left: 0;
       width: 79px;
       height: 6px;
@@ -230,9 +259,14 @@
 }
 
 .wrapper-dark-list {
+
+  @include vp-1440 {
+    padding-bottom: 60px;
+  }
   ul {
     padding: 0;
     margin: 0;
+    margin-top: 22px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -240,25 +274,42 @@
 
   ul li {
     list-style-type: none;
-    padding: 0 10px;
+    padding: 0 14px;
     background-color: $bg-grey;
     border-radius: 5px;
+
+
+  @include vp-1440 {
+    padding: 0 18px;
+  }
   }
 
   li h3 {
-    //styleName: h3;
     font-family: $ff-extra;
-    font-size: 24px;
+
+
+    font-size: 20px;
     font-weight: 400;
-    line-height: 28.8px;
+    line-height: 24px;
     text-align: left;
+
+    @include vp-1440 {
+      font-size: 24px;
+    line-height: 28.8px;
+    // margin-bottom: 0px;
+    }
 
 
   }
 
-  li h2+p {
+  li h3+p {
     border-top: 1px solid $light-grey;
     padding-top: 10px;
+    @include vp-1440 {
+
+    margin-top: 12px;
+    margin-bottom: 14px;
+    }
   }
 }
 
@@ -271,8 +322,16 @@
 }
 
 .wrapper-products {
+  @include vp-1440 {
+    margin-top: 40px;
+  }
+
   li {
     display: flex;
+
+    a div {
+      margin-top: 10px;
+    }
 
     h3 {
       font-family: $ff-extra;
@@ -280,6 +339,7 @@
       font-weight: 400;
       line-height: 24px;
       text-align: left;
+      margin: 5px 0;
 
       @include vp-1440 {
         font-size: 24px;
@@ -289,11 +349,13 @@
 
     svg {
       stroke: $red;
+      width: 15px;
+      height: 15px;
     }
 
     a {
       border: 1px solid $light-grey;
-      padding: 10px;
+      padding: 16px 16px 12px;
       border-radius: 5px;
       cursor: pointer;
       width: 100%;
@@ -353,12 +415,16 @@
   border-radius: 5px;
   padding: 16px;
 
+  @include vp-1440 {
+    padding: 20px;
+  }
+
   h3 {
     margin: 0;
     font-family: $ff-extra;
     color: $blue;
-    padding: 10px 0;
     border-bottom: 1px solid $light-grey;
+    padding-bottom: 16px;
 
     font-size: 20px;
     font-weight: 400;
@@ -384,6 +450,13 @@
       width: 156px;
       height: 100px;
     }
+
+
+  }
+
+  a {
+    margin-top: 10px;
+    display: inline-block;
   }
 
   div {
@@ -393,6 +466,25 @@
 
     @include vp-768 {
       flex-direction: row-reverse;
+    }
+
+    @include vp-1440 {
+      gap: 30px;
+    }
+  }
+
+  img {
+
+
+    @include vp-768 {
+      width: 156px;
+    height: 120px;
+    margin-top: 10px;
+    }
+
+    @include vp-1440 {
+      width: 120px;
+      height: 80px;
     }
   }
 
@@ -472,3 +564,50 @@
     }
   }
 }
+
+// .test {
+//   // max-width: 500px;
+//   .swiper-slide {
+//     display: flex;
+//     flex-direction: column;
+
+//     @include vp-768 {
+//       max-width: 350px !important;
+//     width: auto !important;
+//     }
+//   }
+
+//   .row {
+//     padding: 5px;
+//     width: 100%;
+//     // height: 100%;
+//     border: 0.5px solid #ccc;
+
+// font-size: 16px;
+// font-weight: 400;
+// line-height: 21.6px;
+// text-align: left;
+
+// &:first-child {
+//   font-weight: 500;
+// }
+
+//   }
+
+//   .swiper-wrapper {
+//       word-break: break-all !important;
+//       overflow-wrap: break-word !important;
+
+
+//       @include vp-768 {
+//         display: grid !important;
+//         grid-template-columns: 1fr 1fr 1fr 1fr !important;
+//       }
+// }
+// }
+
+// .table-container.table-responsive {
+//   width: calc(100% - 80px) !important;
+//   margin-right: 0;
+// }
+
