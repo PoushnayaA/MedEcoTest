@@ -3,6 +3,17 @@
   position: relative;
 }
 
+.navigation {
+  @include vp-768 {
+    margin-bottom: 30px;
+  }
+
+  @include vp-1440 {
+    margin-bottom: 45px;
+  }
+}
+
+
 .navigation__list a {
   display: flex;
   justify-content: space-between;
@@ -171,9 +182,14 @@ line-height: 28.8px;
 
       ul {
         display: block;
-        margin-left: 20px;
+        margin-left: 12px;
+        margin-top: 6px;
 
         li {
+
+          a {
+            padding: 6px 0;
+          }
 
           &:hover,
           &:focus,

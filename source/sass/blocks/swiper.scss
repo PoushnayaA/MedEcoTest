@@ -11,6 +11,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  a p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
 }
 
 .swiper-wrapper {
@@ -19,7 +26,7 @@
 
 .swiper-pagination {
   position: absolute;
-  bottom: 10px !important;
+  bottom: 0px !important;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -80,6 +87,10 @@
       flex-direction: column;
       text-align: left;
       width: 100%;
+
+      @include vp-1440 {
+        padding: 20px 0;
+      }
   }
 
 

@@ -34,13 +34,14 @@
 
 .news-card {
   border-radius: 5px;
+
   a {
     padding: 15px;
     border-radius: 5px;
     border: 1px solid transparent;
 
     @include vp-768 {
-      padding: 20px;
+      // padding: 20px;
     }
 
     &:hover,
@@ -54,7 +55,6 @@
     }
   }
 
-  // border-bottom: 1px solid $light-grey;
   margin-bottom: 20px;
 
   background-color: $bg-grey;
@@ -79,10 +79,15 @@
   h2 {
     margin: 0;
 
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 20px;
     text-align: left;
+
+    @include vp-1440 {
+      font-size: 20px;
+    line-height: 24px;
+    }
   }
 
   p {
@@ -98,4 +103,49 @@
   font-weight: 400;
   line-height: 18.9px;
   color: $grey;
+}
+
+.news-list {
+  margin-top: 22px;
+}
+
+.news-pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 40px;
+
+  .active a {
+    color: $red;
+  }
+
+  a {
+    font-family: $ff-extra;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.8px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    svg {
+      &:hover,
+    &:focus,
+    &:active {
+      opacity: 60%;
+    }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $red;
+    }
+  }
 }
