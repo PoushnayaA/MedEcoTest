@@ -8,20 +8,24 @@
   }
 
   &:first-of-type {
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
 
 
   &:last-of-type {
-    margin-bottom: 30px;
-    margin-top: 0px;
-    @include vp-1440 {
-      margin-bottom: 42px;
+    margin-bottom: 0px;
+    // margin-top: 0px;
+    // @include vp-1440 {
+    //   margin-bottom: 42px;
 
-    }
+    // }
   }
 
+  .date {
+    font-size: 16px;
+    line-height: 21.6px;
+  }
 }
 
 .content-container-border + .content-container:last-of-type {
@@ -42,11 +46,12 @@
 }
 
 .wrapper-text-content {
-  padding: 0 0 30px;
+  padding: 0;
+  margin-bottom: 40px;
 
-  @include vp-1440 {
-    padding-bottom: 40px;
-  }
+  // @include vp-1440 {
+  //   padding-bottom: 64px;
+  // }
 
   .red-title {
     color: $red;
@@ -130,6 +135,8 @@
 
     @include vp-1440 {
       height: 437px;
+      margin-top: 32px;
+    margin-bottom: 32px;
     }
   }
 
@@ -260,8 +267,17 @@
   border-bottom: 1px solid $light-grey;
   margin-bottom: 40px;
 
+  @include vp-1440 {
+    padding-bottom: 64px;
+    margin-bottom: 64px;
+  }
+
   p {
     margin: 20px 0;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -270,7 +286,7 @@
 }
 
 .wrapper-link {
-  padding: 20px 0;
+  margin: 20px 0;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -284,8 +300,6 @@
 
   @include vp-1440 {
     gap: 20px;
-    padding-top: 40px;
-    // border-top: 1px solid $light-grey;
   }
 
   a {
@@ -679,6 +693,40 @@ margin-top: 18px;
 
 .wrapper-text-content + .wrapper-quote p {
   margin-top: 0;
+}
+
+.wrapper-link-button {
+
+    a {
+      width: 100%;
+      padding: 12px;
+font-size: 16px;
+font-weight: 500;
+line-height: 21.6px;
+
+      @include vp-768 {
+        max-width: 275px;
+      }
+    }
+
+
+}
+
+.wrapper-dark-list-main {
+  li p {
+font-family: $ff-extra;
+font-size: 20px;
+font-weight: 400;
+line-height: 24px;
+text-align: left;
+
+@include vp-1440 {
+  font-size: 24px;
+line-height: 28.8px;
+}
+
+
+  }
 }
 
 // .test {

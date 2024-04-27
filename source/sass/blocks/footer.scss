@@ -1,6 +1,11 @@
 .footer {
   background-color: $bg-dark-grey;
   color: $grey;
+  margin-top: 40px;
+
+  @include vp-1440 {
+    margin-top: 64px;
+  }
 
   a {
     color: $color-default-white;

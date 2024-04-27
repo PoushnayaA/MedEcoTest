@@ -91,6 +91,14 @@
       font-weight: 400;
       line-height: 21.6px;
       text-align: left;
+
+
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 60%;
+      }
+
     }
   }
 
@@ -125,8 +133,14 @@
       display: block;
       padding: 16px;
 
+      &:hover,
+      &:focus,
+      &:active {
+        opacity: 60%;
+      }
+
       @include vp-768 {
-        padding: 10px 20px;
+        padding: 10px 23px;
       }
 
       @include vp-1440 {
@@ -136,11 +150,8 @@
 
     @include vp-768 {
       display: flex;
-      gap: 30px;
+      gap: 24px;
     }
 
-    @include vp-1440 {
-      // padding: 0 100px;
-    }
   }
 }

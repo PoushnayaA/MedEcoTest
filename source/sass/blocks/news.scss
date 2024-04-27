@@ -35,14 +35,12 @@
 .news-card {
   border-radius: 5px;
 
+
+
   a {
     padding: 15px;
     border-radius: 5px;
     border: 1px solid transparent;
-
-    @include vp-768 {
-      // padding: 20px;
-    }
 
     &:hover,
     &:focus,
@@ -55,7 +53,7 @@
     }
   }
 
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 
   background-color: $bg-grey;
 
@@ -70,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column-reverse;
-    gap: 5px;
+    gap: 8px;
     padding-bottom: 15px;
     margin-bottom: 15px;
     border-bottom: 1px solid $light-grey;
@@ -107,6 +105,10 @@
 
 .news-list {
   margin-top: 22px;
+
+  @include vp-1440 {
+    margin-top: 40px;
+  }
 }
 
 .news-pagination {
@@ -114,6 +116,11 @@
   align-items: center;
   gap: 4px;
   margin-top: 40px;
+
+  @include vp-1440 {
+    margin-top: 64px;
+    gap: 0;
+  }
 
   .active a {
     color: $red;
