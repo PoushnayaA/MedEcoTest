@@ -106,31 +106,78 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
-//   function processRows() {
-//     var slides = Array.from(document.querySelectorAll('.swiper-slide'));
-//     var maxRows = Math.max(...slides.map(slide => slide.querySelectorAll('.row').length));
-//     var rowElements = [];
 
-//     var h = 0;
-//     document.querySelectorAll('.row').forEach(i => i.style.height = 'auto');
 
-//     for (let i = 0; i < maxRows; i++) {
-//       rowElements[i] = Array.from(document.querySelectorAll(`.swiper-slide .row:nth-child(${i + 1})`));
-//     }
+  function processRows(sw) {
+    var slides = Array.from(sw.querySelectorAll('.swiper-slide'));
+    var maxRows = Math.max(...slides.map(slide => slide.querySelectorAll('.row').length));
+    var rowElements = [];
 
-//     for (let j = 0; j < rowElements.length; j++) {
-//       h = 0;
-//       for (let i = 0; i < rowElements[j].length; i++) {
-//         if (rowElements[j][i].offsetHeight > h) {
-//           h = rowElements[j][i].offsetHeight;
-//         }
-//       }
-//       for (let i = 0; i < 4; i++) {
-//         rowElements[j][i].style.height = `${h}px`;
-//       }
-//     }
-//   }
+    var h = 0;
+    sw.querySelectorAll('.row').forEach(i => i.style.height = 'auto');
 
-// window.addEventListener('scroll', processRows);
-// window.addEventListener('resize', processRows);
+    for (let i = 0; i < maxRows; i++) {
+      rowElements[i] = Array.from(sw.querySelectorAll(`.swiper-slide .row:nth-child(${i + 1})`));
+    }
+
+    for (let j = 0; j < rowElements.length; j++) {
+      h = 0;
+      for (let i = 0; i < rowElements[j].length; i++) {
+        if (rowElements[j][i].offsetHeight > h) {
+          h = rowElements[j][i].offsetHeight;
+        }
+      }
+      for (let i = 0; i < 4; i++) {
+        rowElements[j][i].style.height = `${h}px`;
+      }
+    }
+  }
+
+
+
+
+function assignUniqueClassToChildren() {
+  const tableSwipers = document.querySelectorAll('.table-swiper');
+  let uniqueClassIndex = 0;
+
+  tableSwipers.forEach(tableSwiper => {
+    const child = tableSwiper.children[0];
+    const uniqueClass = `table-swiper-${uniqueClassIndex}`;
+    child.classList.add(uniqueClass);
+
+    const swiper = new Swiper(`.${uniqueClass}`, {
+      // Опции Swiper
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      slidesPerView: 2,
+      breakpoints: {
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+          allowTouchMove: false,
+        },
+      },
+    });
+    window.addEventListener('scroll', function() {
+      processRows(this.document.querySelector(`.${uniqueClass}`))
+    });
+    window.addEventListener('resize', function() {
+      processRows(this.document.querySelector(`.${uniqueClass}`))
+    });
+    uniqueClassIndex++;
+  });
+
+
+}
+
+assignUniqueClassToChildren();
+
+
+
+
+
+
+
 });
