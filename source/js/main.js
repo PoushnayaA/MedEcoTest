@@ -6,13 +6,27 @@ import { Form } from './modules/form-validate/form';
 
 window.addEventListener('DOMContentLoaded', () => {
 
+  var swiper = new Swiper('.swiper-container-news', {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    spaceBetween: 20,
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        allowTouchMove: false,
+      },
+    },
+  });
+
   var navigation = document.querySelector('.navigation');
   var placeholder = document.querySelector('.navigation-placeholder');
   var navigationTop = navigation.getBoundingClientRect().top + window.pageYOffset;
   var initialPosition = navigation.getBoundingClientRect();
 
   function handleScroll() {
-    console.log(1);
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (window.innerWidth < 768) {
@@ -39,13 +53,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateInitialPosition() {
-    console.log(2);
     navigationTop = navigation.getBoundingClientRect().top + window.pageYOffset;
     initialPosition = navigation.getBoundingClientRect();
   }
 
   function handleResize() {
-    console.log(3);
     navigation.classList.remove('fixed');
     navigation.style.width = '';
     navigation.style.left = '';
@@ -65,7 +77,6 @@ window.addEventListener('DOMContentLoaded', () => {
   const navigationList = document.querySelector('.navigation__list');
 
   navigationButton.addEventListener('click', function () {
-    console.log(4);
     navigationList.classList.toggle('active');
     navigationButton.classList.toggle('active');
     if (navigationList.classList.contains('active')) {
@@ -77,7 +88,6 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   window.addEventListener('load', () => {
-    console.log(5);
     navigationList.style.height = '0';
   });
 
@@ -86,7 +96,6 @@ window.addEventListener('DOMContentLoaded', () => {
   logo.style.transition = 'width 1s ease';
 
   window.addEventListener('resize', function () {
-    console.log(6);
     if (window.innerWidth <= 768) {
       logo.style.width = '48px';
     } else {
@@ -112,7 +121,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function processRows(sw) {
-    console.log(7);
     var slides = Array.from(sw.querySelectorAll('.swiper-slide'));
     var maxRows = Math.max(...slides.map(slide => slide.querySelectorAll('.row').length));
     var rowElements = [];
@@ -138,7 +146,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   function assignUniqueClassToChildren() {
-    console.log(8);
     const tableSwipers = document.querySelectorAll('.table-swiper');
     let uniqueClassIndex = 0;
 
@@ -146,10 +153,8 @@ window.addEventListener('DOMContentLoaded', () => {
       const child = tableSwiper.children[0];
       const uniqueClass = `table-swiper-${uniqueClassIndex}`;
       child.classList.add(uniqueClass);
-      console.log(2);
 
       const swiper = new Swiper(`.${uniqueClass}`, {
-        // Опции Swiper
         pagination: {
           el: '.swiper-pagination',
           clickable: true,
@@ -176,7 +181,6 @@ window.addEventListener('DOMContentLoaded', () => {
   assignUniqueClassToChildren();
 
   function adjustH3Heights() {
-    console.log(9);
     const wrapperProducts = document.querySelector('.wrapper-products');
     if (!wrapperProducts) return;
 
