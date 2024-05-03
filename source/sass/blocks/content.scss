@@ -19,24 +19,11 @@
 
   &:last-of-type {
     margin-bottom: 0px;
-    // margin-top: 0px;
-    // @include vp-1440 {
-    //   margin-bottom: 42px;
-
-    // }
   }
 
   .date {
     font-size: 16px;
     line-height: 21.6px;
-  }
-}
-
-.content-container-border+.content-container:last-of-type {
-
-  // background-color: red;
-  .wrapper-link-border {
-    padding-bottom: 0;
   }
 }
 
@@ -154,11 +141,17 @@
   }
 }
 
-.wrapper-text-border .wrapper-quote {
-  margin-top: 40px;
-}
+// .wrapper-text-border .wrapper-quote {
+//   margin-top: 40px;
+// }
 
 .wrapper-quote {
+
+  margin: 40px 0;
+
+  @include vp-1440 {
+    margin: 64px 0;
+  }
 
   p {
     font-family: $ff-extra;
@@ -167,19 +160,18 @@
     line-height: 24px;
     text-align: left;
 
-    padding: 12px 0;
+
+    padding: 12px 0 0;
 
     position: relative;
 
     @include vp-768 {
-    padding: 18px 0;
+    padding: 18px 0 0;
     }
 
     @include vp-1440 {
       font-size: 24px;
       line-height: 28.8px;
-      margin-top: 30px;
-      margin-bottom: 40px;
     }
 
     &::after {
@@ -234,9 +226,9 @@
   }
 
   a {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
-    line-height: 18.9px;
+    line-height: 21.6px;
     text-align: left;
     color: $red;
     display: flex;
@@ -256,7 +248,11 @@
 }
 
 .wrapper-link-border {
-  padding: 15px 0 10px;
+  margin: 40px 0 ;
+
+  @include vp-1440 {
+    margin: 64px 0 ;
+  }
 
   a {
     display: flex;
@@ -701,10 +697,6 @@
   }
 }
 
-.wrapper-text-content+.wrapper-quote p {
-  margin-top: 0;
-}
-
 .wrapper-link-button {
 
   a {
@@ -742,9 +734,13 @@
 .table-swiper {
   margin-top: 25px;
 
+  @include vp-1440 {
+    margin-bottom: 48px;
+    margin-top: 36px;
+  }
+
   .swiper-pagination {
-    right: 20px;
-    left: 80%;
+    left: 75%;
     bottom: 10px !important;
   }
 
@@ -775,20 +771,14 @@
     align-items: center;
     justify-content: flex-start;
     text-align: left;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 18.9px;
+    line-height: 21.6px;
 
 
     &:first-child {
       font-weight: 500;
       font-size: 16px;
-      line-height: 21.6px;
-    }
-
-    @include vp-768 {
-      font-size: 16px;
-      font-weight: 400;
       line-height: 21.6px;
     }
 
@@ -814,12 +804,19 @@
   }
 }
 
-.table-container.table-responsive {
-  width: calc(100% - 80px) !important;
-  margin-right: 0;
+.main-title {
+  @include vp-1440 {
+  margin-bottom: 16px;
+  }
+}
+
+.main-title-decorate {
+  @include vp-1440 {
+    margin-bottom: 40px;
+    }
 }
 
 .content-container:last-of-type .wrapper-text-content,
-.content-container:last-of-type .wrapper-link {
+.content-container:last-of-type .wrapper-link:last-of-type {
   margin-bottom: 0;
 }
