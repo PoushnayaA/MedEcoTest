@@ -139,7 +139,7 @@ window.addEventListener('DOMContentLoaded', () => {
           h = rowElements[j][i].offsetHeight;
         }
       }
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < slides.length; i++) {
         rowElements[j][i].style.height = `${h}px`;
       }
     }
@@ -159,12 +159,19 @@ window.addEventListener('DOMContentLoaded', () => {
           el: '.swiper-pagination',
           clickable: true,
         },
-        slidesPerView: 2,
+
         breakpoints: {
+
           768: {
-            slidesPerView: 1,
+            slidesPerView: 4,
             spaceBetween: 0,
-            allowTouchMove: false,
+            allowTouchMove: true,
+          },
+
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 0,
+            allowTouchMove: true,
           },
         },
       });
@@ -177,6 +184,7 @@ window.addEventListener('DOMContentLoaded', () => {
       uniqueClassIndex++;
     });
   }
+
 
   assignUniqueClassToChildren();
 

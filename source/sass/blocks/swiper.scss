@@ -24,10 +24,6 @@
   }
 }
 
-.swiper-wrapper {
-  // overflow: hidden;
-}
-
 .swiper-pagination {
   position: absolute;
   bottom: 0px !important;
@@ -58,17 +54,17 @@
   }
 
   .swiper-wrapper {
-    flex-direction: column;
-    transform: none !important;
+    // flex-direction: column;
+    // transform: none !important;
   }
 
   .swiper-slide {
     margin-bottom: 20px;
   }
 
-  .swiper-pagination {
-    display: none;
-  }
+  // .swiper-pagination {
+  //   // display: none;
+  // }
 }
 
 .swiper-wrapper {
@@ -146,4 +142,6 @@
     height: auto;
     position:relative !important;
   }
+
+
 
