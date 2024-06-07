@@ -163,7 +163,7 @@ window.addEventListener('DOMContentLoaded', () => {
         breakpoints: {
 
           768: {
-            slidesPerView: 4,
+            slidesPerView: 'auto',
             spaceBetween: 0,
             allowTouchMove: true,
           },
