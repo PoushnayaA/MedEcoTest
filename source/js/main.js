@@ -152,8 +152,6 @@ window.addEventListener('DOMContentLoaded', () => {
     const tableSwipers = document.querySelectorAll('.table-swiper');
     let uniqueClassIndex = 0;
 
-    console.log(1);
-
     tableSwipers.forEach(tableSwiper => {
       const child = tableSwiper.children[0];
       const uniqueClass = `table-swiper-${uniqueClassIndex}`;
@@ -205,9 +203,9 @@ window.addEventListener('DOMContentLoaded', () => {
           },
         },
       });
-      window.addEventListener('scroll', function () {
-        processRows(this.document.querySelector(`.${uniqueClass}`))
-      });
+
+      processRows(this.document.querySelector(`.${uniqueClass}`))
+
       window.addEventListener('resize', function () {
         processRows(this.document.querySelector(`.${uniqueClass}`))
       });
