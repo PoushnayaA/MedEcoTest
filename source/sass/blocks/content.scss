@@ -163,7 +163,7 @@
     position: relative;
 
     @include vp-768 {
-    padding: 18px 0 0;
+      padding: 18px 0 0;
     }
 
     @include vp-1440 {
@@ -208,7 +208,6 @@
 .wrapper-link {
   margin: 20px 0;
   display: flex;
-  gap: 20px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
@@ -240,15 +239,15 @@
   }
 
   svg {
-    stroke: white;
+    stroke: #ffffff;
   }
 }
 
 .wrapper-link-border {
-  margin: 40px 0 ;
+  margin: 40px 0;
 
   @include vp-1440 {
-    margin: 64px 0 ;
+    margin: 64px 0;
   }
 
   a {
@@ -271,13 +270,11 @@
       font-size: 16px;
       font-weight: 500;
       line-height: 21.6px;
-
     }
   }
 }
 
 .wrapper-dark-list {
-
   ul {
     padding: 0;
     margin: 0;
@@ -315,10 +312,7 @@
     @include vp-1440 {
       font-size: 24px;
       line-height: 28.8px;
-      // margin-bottom: 0px;
     }
-
-
   }
 
   li h3+p {
@@ -344,6 +338,13 @@
 
 .wrapper-products {
   margin-top: 18px;
+
+  @include vp-768 {
+    h3 {
+      display: flex;
+      align-items: center;
+    }
+  }
 
   @include vp-1440 {
     margin-top: 40px;
@@ -464,15 +465,24 @@
 
     @include vp-768 {
       width: 156px;
-      height: 100px;
+      height: 120px;
+      margin-top: 10px;
     }
 
-
+    @include vp-1440 {
+      width: 120px;
+      height: 80px;
+    }
   }
 
   a {
     margin-top: 10px;
     display: inline-block;
+    color: $red;
+
+    svg {
+      stroke: $red;
+    }
   }
 
   div {
@@ -486,29 +496,6 @@
 
     @include vp-1440 {
       gap: 30px;
-    }
-  }
-
-  img {
-
-
-    @include vp-768 {
-      width: 156px;
-      height: 120px;
-      margin-top: 10px;
-    }
-
-    @include vp-1440 {
-      width: 120px;
-      height: 80px;
-    }
-  }
-
-  a {
-    color: $red;
-
-    svg {
-      stroke: $red;
     }
   }
 }
@@ -533,6 +520,8 @@
     font-weight: 400;
     line-height: 24px;
     text-align: left;
+    color: $black;
+    padding-bottom: 0;
 
     @include vp-768 {
       line-height: 20px;
@@ -584,11 +573,6 @@
     }
   }
 
-  h3 {
-    color: $black;
-    padding-bottom: 0;
-  }
-
   p {
     @include vp-1440 {
       margin: 12px 0;
@@ -596,22 +580,12 @@
   }
 
   a {
-
     @include vp-768 {
       margin-top: 3px;
     }
 
     @include vp-1440 {
       margin-top: 10px;
-    }
-  }
-}
-
-.wrapper-products {
-  @include vp-768 {
-    h3 {
-      display: flex;
-      align-items: center;
     }
   }
 }
@@ -684,7 +658,6 @@
 }
 
 .wrapper-link-button {
-
   a {
     width: 100%;
     padding: 12px;
@@ -696,8 +669,6 @@
       max-width: 275px;
     }
   }
-
-
 }
 
 .wrapper-dark-list-main {
@@ -743,11 +714,7 @@
     flex-direction: column;
 
     @include vp-768 {
-      // max-width: 25% !important;
-      // width: 123px !important;
-      // width: auto !important;
-      // min-width: 25%;
-      // max-width: 100%;
+      max-width: 25%;
     }
   }
 
@@ -780,32 +747,47 @@
   .swiper-wrapper {
     word-break: break-all !important;
     overflow-wrap: break-word !important;
-
-
-    // @include vp-768 {
-    //   display: grid !important;
-    //   grid-template-columns: 1fr 1fr 1fr 1fr !important;
-    // }
-
-    // @include vp-1440 {
-    //   grid-template-columns: 4fr 3fr 3fr 3fr !important;
-    // }
   }
 }
 
 .main-title {
   @include vp-1440 {
-  margin-bottom: 16px;
+    margin-bottom: 16px;
   }
 }
 
 .main-title-decorate {
   @include vp-1440 {
     margin-bottom: 40px;
-    }
+  }
 }
 
 .content-container:last-of-type .wrapper-text-content,
 .content-container:last-of-type .wrapper-link:last-of-type {
   margin-bottom: 0;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+}
+
+.sidebar .news {
+  @include vp-768 {
+    .swiper-pagination {
+      display: none;
+    }
+
+    .swiper-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }

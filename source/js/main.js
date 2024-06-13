@@ -120,6 +120,9 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+
+
+
   function processRows(sw) {
     var slides = Array.from(sw.querySelectorAll('.swiper-slide'));
     var maxRows = Math.max(...slides.map(slide => slide.querySelectorAll('.row').length));
@@ -149,10 +152,37 @@ window.addEventListener('DOMContentLoaded', () => {
     const tableSwipers = document.querySelectorAll('.table-swiper');
     let uniqueClassIndex = 0;
 
+    console.log(1);
+
     tableSwipers.forEach(tableSwiper => {
       const child = tableSwiper.children[0];
       const uniqueClass = `table-swiper-${uniqueClassIndex}`;
       child.classList.add(uniqueClass);
+      const slides = document.querySelector(`.${uniqueClass}`).querySelectorAll('.swiper-slide');
+      const slidesCount = slides.length;
+
+      if (slidesCount <= 4 && window.innerWidth >= 768) {
+        const slideWidth = (100 / slidesCount).toFixed(2) + '%';
+        slides.forEach(slide => {
+          slide.style.maxWidth = slideWidth;
+        });
+        document.querySelector(`.${uniqueClass}`).style.paddingBottom = '0px';
+      }
+
+      if (window.innerWidth < 768) {
+        slides.forEach(slide => {
+          slide.style.maxWidth = 'unset';
+        });
+        document.querySelector(`.${uniqueClass}`).style.paddingBottom = '0px';
+      }
+
+      if (slidesCount > 4 && window.innerWidth >= 768) {
+        slides.forEach(slide => {
+          slide.style.maxWidth = '25%';
+        });
+        document.querySelector(`.${uniqueClass}`).style.paddingBottom = '40px';
+        document.querySelector(`.${uniqueClass}`).querySelector('.swiper-pagination').style.setProperty('bottom', '0', 'important');
+      }
 
       const swiper = new Swiper(`.${uniqueClass}`, {
         pagination: {
@@ -186,7 +216,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  assignUniqueClassToChildren();
+  // assignUniqueClassToChildren();
 
   function adjustH3Heights() {
     const wrapperProducts = document.querySelector('.wrapper-products');
@@ -210,5 +240,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('load', adjustH3Heights);
   window.addEventListener('resize', adjustH3Heights);
+  window.addEventListener('load', assignUniqueClassToChildren);
+  window.addEventListener('resize', assignUniqueClassToChildren);
 
 });

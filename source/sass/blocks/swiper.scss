@@ -53,22 +53,12 @@
     height: auto;
   }
 
-  .swiper-wrapper {
-    // flex-direction: column;
-    // transform: none !important;
-  }
-
   .swiper-slide {
     margin-bottom: 20px;
   }
-
-  // .swiper-pagination {
-  //   // display: none;
-  // }
 }
 
 .swiper-wrapper {
-  // gap: 20px;
   padding: 0 0 25px;
 }
 
@@ -142,7 +132,3 @@
     height: auto;
     position:relative !important;
   }
-
-
-
-

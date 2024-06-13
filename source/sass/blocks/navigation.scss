@@ -286,11 +286,8 @@ line-height: 28.8px;
 
 .main-wrapper-sidebar .container {
   display: flex;
-  justify-content: space-between;
   gap: 10px;
   flex-direction: column;
-
-
 
   @include vp-768 {
     flex-direction: row;
