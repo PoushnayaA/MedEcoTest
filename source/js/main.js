@@ -213,9 +213,6 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-
-  // assignUniqueClassToChildren();
-
   function adjustH3Heights() {
     const wrapperProducts = document.querySelector('.wrapper-products');
     if (!wrapperProducts) return;
