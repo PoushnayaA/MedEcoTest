@@ -744,10 +744,10 @@
 
   }
 
-  .swiper-wrapper {
-    word-break: break-all !important;
-    overflow-wrap: break-word !important;
-  }
+  // .swiper-wrapper {
+  //   word-break: break-all !important;
+  //   overflow-wrap: break-word !important;
+  // }
 }
 
 .main-title {
@@ -790,4 +790,18 @@
       flex-direction: column;
     }
   }
+}
+
+.table-swiper .swiper-slide {
+  width: auto;
+  // display: inline-block;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.table-swiper .swiper-slide > div {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
+  // word-break: break-all;
 }

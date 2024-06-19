@@ -1055,6 +1055,8 @@ ul {
   padding: 16px;
   -webkit-box-shadow: 0px 4px 38px 0px rgba(79, 89, 100, 0.4);
           box-shadow: 0px 4px 38px 0px rgba(79, 89, 100, 0.4);
+  overflow-y: auto;
+  max-height: 100vh;
 }
 .navigation.fixed .container {
   -webkit-box-shadow: 0px 4px 38px 0px rgba(79, 89, 100, 0.4);
@@ -2394,10 +2396,6 @@ ul {
     padding: 16px 14px;
   }
 }
-.table-swiper .swiper-wrapper {
-  word-break: break-all !important;
-  overflow-wrap: break-word !important;
-}
 
 @media (min-width: 1440px) {
   .main-title {
@@ -2448,4 +2446,16 @@ ul {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+}
+
+.table-swiper .swiper-slide {
+  width: auto;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.table-swiper .swiper-slide > div {
+  display: inline-block;
+  vertical-align: top;
+  white-space: normal;
 }
